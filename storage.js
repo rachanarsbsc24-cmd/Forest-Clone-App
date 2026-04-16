@@ -1,12 +1,10 @@
 let sessions = [];
 let coins = 0;
 
-// 🌱 Save session
+// 🌱 Save session + reward coins
 export const saveSession = (session) => {
   sessions.push(session);
-
-  // 💰 reward coins per session
-  coins += 10;
+  coins += 10; // reward per session
 };
 
 // 📊 Get sessions

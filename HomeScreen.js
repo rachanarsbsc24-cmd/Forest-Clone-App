@@ -34,23 +34,27 @@ export default function HomeScreen({ navigation }) {
   }, [running, time]);
 
   return (
-    <View style={{
-      flex: 1,
-      backgroundColor: '#1b5e20',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }}>
-
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: '#1b5e20',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+    >
       <Text style={{ fontSize: 60 }}>{tree}</Text>
       <Text style={{ fontSize: 30, color: 'white' }}>{time}s</Text>
 
       <Button title="Start" onPress={() => setRunning(true)} />
       <Button title="Pause" onPress={() => setRunning(false)} />
-      <Button title="Reset" onPress={() => {
-        setTime(10);
-        setRunning(false);
-        setTree('🌱');
-      }} />
+      <Button
+        title="Reset"
+        onPress={() => {
+          setTime(10);
+          setRunning(false);
+          setTree('🌱');
+        }}
+      />
 
       <Button title="Stats" onPress={() => navigation.navigate('Stats')} />
     </View>

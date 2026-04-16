@@ -27,16 +27,22 @@ export default function StatsScreen() {
           💰 Coins: {coins}
         </Text>
 
-        {/* 📊 SESSIONS */}
+        {/* 📊 HISTORY */}
         <Text style={{ fontSize: 20, color: 'white', marginTop: 20 }}>
-          📊 Sessions:
+          📊 Session History:
         </Text>
 
-        {sessions.map((s, i) => (
-          <Text key={i} style={{ color: 'white', marginTop: 5 }}>
-            🌳 {s.date}
+        {sessions.length === 0 ? (
+          <Text style={{ color: 'white', marginTop: 10 }}>
+            No sessions yet
           </Text>
-        ))}
+        ) : (
+          sessions.map((s, i) => (
+            <Text key={i} style={{ color: 'white', marginTop: 5 }}>
+              🌳 {s.date}
+            </Text>
+          ))
+        )}
 
       </View>
     </ScrollView>
