@@ -1,13 +1,22 @@
 let sessions = [];
+let coins = 0;
 
 // 🌱 Save session
 export const saveSession = (session) => {
   sessions.push(session);
+
+  // 💰 reward coins per session
+  coins += 10;
 };
 
 // 📊 Get sessions
 export const getSessions = () => {
   return sessions;
+};
+
+// 💰 Get coins
+export const getCoins = () => {
+  return coins;
 };
 
 // 🔥 STREAK SYSTEM
