@@ -4,20 +4,16 @@ let coins = 0;
 // 🌱 Save session + reward coins
 export const saveSession = (session) => {
   sessions.push(session);
-  coins += 10; // reward per session
+  coins += 10;
 };
 
-// 📊 Get sessions
-export const getSessions = () => {
-  return sessions;
-};
+// 📊 Sessions
+export const getSessions = () => sessions;
 
-// 💰 Get coins
-export const getCoins = () => {
-  return coins;
-};
+// 💰 Coins
+export const getCoins = () => coins;
 
-// 🔥 STREAK SYSTEM
+// 🔥 Streak system
 export const getStreak = () => {
   if (sessions.length === 0) return 0;
 
@@ -29,11 +25,8 @@ export const getStreak = () => {
 
     const diff = (curr - prev) / (1000 * 60 * 60 * 24);
 
-    if (diff <= 1) {
-      streak++;
-    } else {
-      break;
-    }
+    if (diff <= 1) streak++;
+    else break;
   }
 
   return streak;
